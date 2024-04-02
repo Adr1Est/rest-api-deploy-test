@@ -1,0 +1,32 @@
+### Recuperar todas las películas
+GET http://localhost:1234/movies
+
+### Recuperar una película por id 
+GET http://localhost:1234/movies/c906673b-3948-4402-ac7f-73ac3a9e3105
+
+### Recuperar todas las películas por un género  <= Query params
+GET http://localhost:1234/movies?genre=Sci-Fi
+
+### Crear una película - POST
+POST http://localhost:1234/movies
+Content-Type: application/json
+
+{
+    "title": "Blade Runner",
+    "year": 1982,
+    "director": "Ridley Scott",
+    "duration": 117,
+    "poster": "https://pics.filmaffinity.com/Blade_Runner-351607743-mmed.jpg",
+    "genre": [
+      "Sci-Fi"
+    ],
+    "rate": 8.1
+}
+
+### Actualizar una película con PATCH
+PATCH http://localhost:1234/movies/dcdd0fad-a94c-4810-8acc-5f108d3b18c3
+Content-Type: application/json
+
+{
+  "year": 1993
+}
